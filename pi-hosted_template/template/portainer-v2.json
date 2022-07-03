@@ -4065,8 +4065,7 @@
           "default": "random",
           "description": "Set the webadmin password",
           "label": "WEBPASSWORD",
-          "name": "WEBPASSWORD",
-          "preset": true
+          "name": "WEBPASSWORD"
         },
         {
           "default": "Europe\\Madrid",
