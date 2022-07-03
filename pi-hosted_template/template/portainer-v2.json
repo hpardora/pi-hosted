@@ -3228,6 +3228,26 @@
       "description": "n8n is an extendable workflow automation tool.",
       "env": [
         {
+          "default": "N8N.LOCALHOST",
+          "label": "N8N_HOST",
+          "name": "N8N_HOST"
+        },
+        {
+          "default": "443",
+          "label": "N8N_PORT",
+          "name": "N8N_PORT"
+        },
+        {
+          "default": "https",
+          "label": "N8N_PROTOCOL",
+          "name": "N8N_PROTOCOL"
+        },
+        {
+          "default": "https://n8n.localhost/",
+          "label": "WEBHOOK_TUNNEL_URL",
+          "name": "WEBHOOK_TUNNEL_URL"
+        },
+        {
           "default": "true",
           "label": "N8N_BASIC_AUTH_ACTIVE",
           "name": "N8N_BASIC_AUTH_ACTIVE"
