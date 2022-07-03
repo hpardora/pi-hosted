@@ -4062,6 +4062,13 @@
           "name": "ServerIP"
         },
         {
+          "default": "",
+          "description": "Set the webadmin password",
+          "label": "WEBPASSWORD",
+          "name": "WEBPASSWORD",
+          "preset": true
+        },
+        {
           "default": "Europe\\Madrid",
           "label": "TZ",
           "name": "TZ"
@@ -4091,12 +4098,6 @@
           "default": "127.0.0.1#5335",
           "label": "DNS2",
           "name": "DNS2",
-          "preset": true
-        },
-        {
-          "default": "",
-          "label": "WEBPASSWORD",
-          "name": "WEBPASSWORD",
           "preset": true
         }
       ],
