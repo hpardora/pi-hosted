@@ -4062,7 +4062,7 @@
           "name": "ServerIP"
         },
         {
-          "default": "",
+          "default": "random",
           "description": "Set the webadmin password",
           "label": "WEBPASSWORD",
           "name": "WEBPASSWORD",
