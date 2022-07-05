@@ -4113,6 +4113,7 @@
       ],
       "restart_policy": "unless-stopped",
       "title": "Pi-Hole-Unbound",
+      "cap-add": ["NET_ADMIN"],
       "type": 1,
       "volumes": [
         {
