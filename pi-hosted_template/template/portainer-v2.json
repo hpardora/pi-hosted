@@ -1733,7 +1733,7 @@
       "description": "A simple server for sending and receiving messages",
       "env": [
         {
-          "default": "America/New_York",
+          "default": "Europe/Madrid",
           "label": "TZ",
           "name": "TZ"
         },
@@ -1748,7 +1748,7 @@
           "name": "GOTIFY_DEFAULTUSER_PASS"
         }
       ],
-      "image": "gotify/server-arm7:latest",
+      "image": "gotify/server:latest",
       "logo": "https://raw.githubusercontent.com/hpardora/pi-hosted/master/images/gotify.png",
       "name": "gotify",
       "note": "<h3>Template created by Pi-Hosted Series</h3><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://gotify.net/\" target=\"_blank\">https://gotify.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://gotify.net/docs/install\" target=\"_blank\">https://gotify.net/docs/install</a><br><br><br>ARM7 Image. Documentation is Available <a href='https://gotify.net/docs/index'>here</a>.",
