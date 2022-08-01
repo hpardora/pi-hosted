@@ -4,3 +4,4 @@ desktop.ini
 
 # Ignore tmp file in build directory
 build/tmp/
+pi-hosted_template/template/portainer-v2.json
