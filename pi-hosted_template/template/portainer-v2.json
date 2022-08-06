@@ -1421,7 +1421,7 @@
         "Tools"
       ],
       "description": "Eclipse Mosquitto is an open source implementation of a server for versions 5, 3.1.1, and 3.1 of the MQTT protocol.\r\nYou will need to create /portainer/Files/AppData/Config/Mosquitto/config/mosquitto.conf and if needed your password file.\r\nHave a look on https://mosquitto.org/man/mosquitto_passwd-1.html",
-      "hostname": "rpi-mosquitto",
+      "hostname": "mosquitto",
       "image": "eclipse-mosquitto:latest",
       "logo": "https://raw.githubusercontent.com/docker-library/docs/757578e3a44e5460a8a11d32a81776f8b74231a9/eclipse-mosquitto/logo.png",
       "name": "mosquitto",
@@ -1467,7 +1467,7 @@
           "name": "PGID"
         },
         {
-          "default": "America/New_York",
+          "default": "Europe/Madrid",
           "label": "TZ",
           "name": "TZ"
         }
@@ -6589,40 +6589,91 @@
     },
     {
       "categories": [
-        "Other",
-        "Tools"
+        "Home Automation"
       ],
-      "image": "koenkk/zigbee2mqtt:latest",
-      "logo": "https://raw.githubusercontent.com/hpardora/pi-hosted/master/images/zigbbee2mqtt.png",
-      "name": "Zigbee2MQTT",
-      "platform": "linux",
-      "ports": [
-        "9069:8080/tcp"
-      ],
-      "volumes": [
-        {
-          "bind": "/portainer/Files/AppData/Config/zigbee2mqtt",
-          "container": "/app/data"
-        },
-        {
-          "bind": "/run/udev",
-          "container": "/run/udev",
-          "readonly": 1
-        }
-        ],
+      "description": "Zigbee2MQTT is a nodejs Gateway application that connects Zigbee networks to MQTT networks.",
       "env": [
         {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "100",
+          "label": "PGID",
+          "name": "PGID"
+        },
+        {
           "default": "Europe/Madrid",
-          "label": "TZ",
+          "label": "Time Zone",
           "name": "TZ"
+        },
+        {
+          "default": "true",
+          "label": "Allow new devices to join",
+          "name": "ZIGBEE2MQTT_CONFIG_PERMIT_JOIN",
+          "select": [
+            {
+              "text": "Enable",
+              "value": "true"
+            },
+            {
+              "text": "Disable",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "default": "zigbee2mqtt",
+          "label": "MQTT base topic",
+          "name": "ZIGBEE2MQTT_CONFIG_MQTT_BASE_TOPIC",
+          "description": "Default MQTT base topic"
+        },
+        {
+          "default": "mqtt://localhost",
+          "label": "MQTT server address",
+          "name": "ZIGBEE2MQTT_CONFIG_MQTT_SERVER",
+          "description": "MQTT server address"
+        },
+        {
+          "default": "/dev/zigbee",
+          "label": "Zigbee Adapter path",
+          "name": "ZIGBEE2MQTT_CONFIG_SERIAL_PORT",
+          "description": "Zigbee Adapter path, for example, the serial port the adapter connected to:"
+        },
+        {
+          "default": "true",
+          "label": "Enable the Zigbee2MQTT frontend",
+          "name": "ZIGBEE2MQTT_CONFIG_FRONTEND",
+          "select": [
+            {
+              "text": "Enable",
+              "value": "true"
+            },
+            {
+              "text": "Disable",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "default": "8003",
+          "label": "Frontend external port",
+          "name": "external_port ",
+          "description": "Frontend external port bind to Zigbee2MQTT service's 8080 port. Browse to http://{host-ip}:<Frontend external port> to access the web interface."
         }
       ],
-      "restart_policy": "always",
-      "title": "Zigbee2Mqtt",
-      "type": 1,
-      "devices": [
-        "/dev/zigbee:/dev/ttyUSB0"
-      ]
+      "logo": "https://www.zigbee2mqtt.io/logo.png",
+      "name": "Zigbee2MQTT",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Stack/zigbee2mqtt.yml",
+        "url": "https://github.com/hpardora/pi-hosted/pi-hosted_template"
+      },
+      "title": "Zigbee2MQTT",
+      "network": "bridge",
+      "type": 3,
+      "note": "Browse to <a href='http://{host-ip}:<8003'>http://{host-ip}:8003</a> to access the web interface, or change the external port number to your customised port number. Check <a href='https://www.zigbee2mqtt.io/guide/configuration/'>Zigbee2MQTT configuration guide</a> for more details."
     }
   ]
 }
