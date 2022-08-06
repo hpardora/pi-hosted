@@ -6667,8 +6667,8 @@
       "name": "Zigbee2MQTT",
       "platform": "linux",
       "repository": {
-        "stackfile": "Stack/zigbee2mqtt.yml",
-        "url": "https://github.com/hpardora/pi-hosted/pi-hosted_template"
+        "stackfile": "pi-hosted_template/Stack/zigbee2mqtt.yml",
+        "url": "https://github.com/hpardora/pi-hosted"
       },
       "title": "Zigbee2MQTT",
       "network": "bridge",
