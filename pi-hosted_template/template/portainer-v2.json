@@ -6671,7 +6671,7 @@
         "url": "https://github.com/hpardora/pi-hosted"
       },
       "title": "Zigbee2MQTT",
-      "type": 3,
+      "type": 1,
       "note": "Browse to <a href='http://{host-ip}:<8003'>http://{host-ip}:8003</a> to access the web interface, or change the external port number to your customised port number. Check <a href='https://www.zigbee2mqtt.io/guide/configuration/'>Zigbee2MQTT configuration guide</a> for more details."
     }
   ]
