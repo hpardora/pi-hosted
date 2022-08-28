@@ -6645,7 +6645,17 @@
           "default": "true",
           "label": "Zigbee Permit Join",
           "name": "ZIGBEE2MQTT_CONFIG_PERMIT_JOIN",
-          "description": "Zigbee permit join"
+          "description": "Zigbee permit join",
+          "select": [
+            {
+              "text": "Enable",
+              "value": "true"
+            },
+            {
+              "text": "Disable",
+              "value": "false"
+            }
+          ]
         },
         {
           "default": "true",
