@@ -6705,7 +6705,7 @@
       "image": "kpetrem/mqtt-exporter",
       "type": 1,
       "ports": [
-        "9002:9002/tcp"
+        "9002:9000/tcp"
       ],
       "restart-policy": "unless-stopped",
       "categories": [
