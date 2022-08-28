@@ -6643,6 +6643,12 @@
         },
         {
           "default": "true",
+          "label": "Zigbee Permit Join",
+          "name": "ZIGBEE2MQTT_CONFIG_PERMIT_JOIN",
+          "description": "Zigbee permit join"
+        },
+        {
+          "default": "true",
           "label": "Enable the Zigbee2MQTT frontend",
           "name": "ZIGBEE2MQTT_CONFIG_FRONTEND",
           "select": [
@@ -6666,13 +6672,20 @@
       "logo": "https://www.zigbee2mqtt.io/logo.png",
       "name": "Zigbee2MQTT",
       "platform": "linux",
-      "repository": {
-        "stackfile": "pi-hosted_template/Stack/zigbee2mqtt.yml",
-        "url": "https://github.com/hpardora/pi-hosted"
-      },
+      "image": "koenkk/zigbee2mqtt:latest",
       "title": "Zigbee2MQTT",
       "type": 1,
-      "note": "Browse to <a href='http://{host-ip}:<8003'>http://{host-ip}:8003</a> to access the web interface, or change the external port number to your customised port number. Check <a href='https://www.zigbee2mqtt.io/guide/configuration/'>Zigbee2MQTT configuration guide</a> for more details."
+      "note": "Browse to <a href='http://{host-ip}:<8003'>http://{host-ip}:8003</a> to access the web interface, or change the external port number to your customised port number. Check <a href='https://www.zigbee2mqtt.io/guide/configuration/'>Zigbee2MQTT configuration guide</a> for more details.",
+      "ports": [
+        "8084:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/Zigbee2Mqtt",
+          "container": "/app/data"
+        }
+      ]
     }
   ]
 }
