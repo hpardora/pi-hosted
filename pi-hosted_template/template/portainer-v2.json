@@ -6696,6 +6696,70 @@
           "container": "/app/data"
         }
       ]
+    },
+    {
+      "logo": "",
+      "name": "mqtt-exporter",
+      "platform": "linux",
+      "title": "MQTT-Exporter",
+      "image": "kpetrem/mqtt-exporter",
+      "type": 1,
+      "ports": [
+        "9002:9002/tcp"
+      ],
+      "restart-policy": "unless-stopped",
+      "categories": [
+        "Home Automation"
+      ],
+      "description": "Simple and generic Prometheus exporter for MQTT. Tested with Mosquitto MQTT and Xiaomi sensors.\n\nIt exposes metrics from MQTT message out of the box (you just need to specify the target if not on localhost).\n\nMQTT-exporter expects a topic and a flat JSON payload, the value must be numeric values.",
+      "env": [
+        {
+          "default": "INFO",
+          "label": "Logging level (default: INFO)",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "127.0.0.1",
+          "label": "IP or hostname of MQTT broker (default: 127.0.0.1)",
+          "name": "MQTT_ADDRESS"
+        },
+        {
+          "default": "1883",
+          "label": "TCP port of MQTT broker (default: 1883)",
+          "name": "MQTT_PORT"
+        },
+        {
+          "default": "60",
+          "label": "Keep alive interval to maintain connection with MQTT broker (default: 60)",
+          "name": "MQTT_KEEPALIVE"
+        },
+        {
+          "default": "",
+          "label": "Username which should be used to authenticate against the MQTT broker (default: None)",
+          "name": "MQTT_USERNAME"
+        },
+        {
+          "default": "",
+          "label": "Password which should be used to authenticate against the MQTT broker (default: None)",
+          "name": "MQTT_PASSWORD"
+        },
+        {
+          "default": "9000",
+          "label": "HTTP server PORT to expose Prometheus metrics (default: 9000)",
+          "name": "PROMETHEUS_PORT"
+        },
+        {
+          "default": "mqtt_",
+          "label": "Prefix added to the metric name, example: mqtt_temperature (default: mqtt_)",
+          "name": "PROMETHEUS_PREFIX"
+        },
+        {
+          "default": "topic",
+          "label": "Define the Prometheus label for the topic, example temperature{topic=\"device1\"} (default: topic)",
+          "name": "TOPIC_LABEL"
+        }
+      ]
     }
+
   ]
 }
